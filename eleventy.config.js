@@ -1,15 +1,19 @@
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+import { EleventyRenderPlugin } from "@11ty/eleventy";
 
-module.exports = function(eleventyConfig) {
+export default async function(eleventyConfig) {
 
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+
+  eleventyConfig.addPassthroughCopy({
+		"./public/": "/"
+	});
+
 
     // Return your Object options:
     return {
       dir: {
         input: "src",
-        includes: "../_includes",
-        
+        includes: "../includes",
       }
     }
   }
