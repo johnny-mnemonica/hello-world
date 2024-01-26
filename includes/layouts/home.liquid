@@ -1,0 +1,15 @@
+---
+layout: /layouts/base.liquid
+---
+
+<div class="container">
+    <div class="grid-1">
+        {% renderFile "./includes/components/left.liquid" %}
+    </div>
+    <div class="grid-2">
+        {{ content }}
+    </div>
+    <div class="grid-3">
+        {% renderFile "./includes/components/right.liquid" %}
+    </div>
+</div>

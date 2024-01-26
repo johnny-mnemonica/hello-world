@@ -1,8 +1,6 @@
 # TODOs:
 
 ## P1
-- convert sidebars into discrete components. 
-- layout chaining with index and base, make home page file into markdown.
 - write website content
 - update and upload CV
 - mobile styling

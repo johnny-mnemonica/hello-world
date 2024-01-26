@@ -33,9 +33,13 @@ body {
     line-height: var(--line-height-base);
 }
 
-h1, h2 {
+h1 {
     font-size: var(--font-size-heading);
     /* font-family: var(--font-family-base); */
+} 
+
+h2 { 
+    font-size: 2rem;
 }
 
 .container {
@@ -51,7 +55,7 @@ h1, h2 {
 
 .grid-3 {
     display: flex;
-    justify-content: center;
+    justify-content: end;
 }
 
 .grid-1 h1 {
