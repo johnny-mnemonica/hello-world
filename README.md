@@ -4,6 +4,7 @@
 - write website content
 - update and upload CV
 - mobile styling
+- url styling
 - routing/navigation
 
 ## P2
