@@ -52,14 +52,14 @@ h2 {
     font-size: 2rem;
 }
 
-.container {
-    padding: 40px;
+pre {
+    font-size: 12px;;
 }
 
+/* Home Grid Layout */
 
-.grid-3 {
-    display: flex;
-    justify-content: end;
+.grid-container {
+    padding: 40px;
 }
 
 .grid-1 h1 {
@@ -72,34 +72,24 @@ h2 {
     margin-top: 15vh;
 }
 
+.grid-3 {
+    display: flex;
+    justify-content: end;
+}
+
+.left {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Icon Nav Styles */
+
+.icon-box {
+    display: flex; 
+}
+
 .icon-box-desktop {
     display: none;
-}
-
-.icon-box img {
-    margin-right: 5px;
-}
-
-.smiley:hover .hide-pixel {
-    display: none;
-}
-
-.smiley:hover {
-    fill: var(--hyperlink-blue);
-    cursor: pointer;
-}
-
-.smiley {
-    fill: #000;
-}
-
-.nav-icon {
-    /* margin-top: 10px; */
-    margin-right: 5px;
-}
-
-pre {
-    font-size: 12px;;
 }
 
 .icon-box-mobile {
@@ -108,9 +98,41 @@ pre {
     /* position: fixed; */
 }
 
-.left {
-    display: flex;
-    justify-content: space-between;
+.icon-box img {
+    margin-right: 5px;
+}
+
+.nav-icon .show-pixel {
+    display: none;
+}
+
+.nav-icon:hover .hide-pixel {
+    display: none;
+}
+
+.nav-icon:hover .show-pixel {
+    display: initial;
+}
+
+.cursor:hover {
+    fill: var(--hyperlink-blue);
+}
+
+.nav-icon:hover:not(.cursor) {
+    fill: var(--hyperlink-blue);
+    cursor: pointer;
+    transform: translateY(3px);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-icon:not(.cursor) {
+    transform: translateY(0px);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    fill: #000;
+}
+
+.nav-icon {
+    margin-right: 5px;
 }
 
 @media screen and (min-width: 750px) {
@@ -129,7 +151,7 @@ pre {
         position: fixed;
     }
 
-    .container {
+    .grid-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 40px;
