@@ -23,6 +23,7 @@
     --font-family-base: PP NeueBit, Arial, Helvetica, sans-serif;
     --font-size-base: 1.5rem;
     --font-size-heading: 3rem;
+    --font-size-heading-mobile: 2.5rem;
     --line-height-base: 1;
     --hyperlink-blue: #0000EE;
     --font-color: #000;
@@ -59,7 +60,7 @@ pre {
 /* Home Grid Layout */
 
 .grid-container {
-    padding: 40px;
+    padding: 30px;
 }
 
 .grid-1 h1 {
@@ -80,6 +81,7 @@ pre {
 .left {
     display: flex;
     justify-content: space-between;
+    column-gap: 1.75rem;
 }
 
 /* Icon Nav Styles */
@@ -95,44 +97,20 @@ pre {
 .icon-box-mobile {
     display: flex;
     justify-content: center;
+    flex-shrink: 0;
     /* position: fixed; */
 }
 
-.icon-box img {
-    margin-right: 5px;
+.icon-box a {
+    margin-right: 2px;
+}
+
+.icon-box a:last-child  {
+    margin-right: 0px;
 }
 
 .nav-icon .show-pixel {
     display: none;
-}
-
-.nav-icon:hover .hide-pixel {
-    display: none;
-}
-
-.nav-icon:hover .show-pixel {
-    display: initial;
-}
-
-.cursor:hover {
-    fill: var(--hyperlink-blue);
-}
-
-.nav-icon:hover:not(.cursor) {
-    fill: var(--hyperlink-blue);
-    cursor: pointer;
-    transform: translateY(3px);
-    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.nav-icon:not(.cursor) {
-    transform: translateY(0px);
-    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    fill: #000;
-}
-
-.nav-icon {
-    margin-right: 5px;
 }
 
 @media screen and (min-width: 750px) {
@@ -140,12 +118,16 @@ pre {
         display: none;
     }
 
+    .icon-box a {
+        margin-right: 5px;
+    }
+
     .icon-box-desktop {
         display: flex;
         justify-content: center;
         position: fixed;
     }
-
+    
     .grid-1 h1 {
         line-height: normal;
         position: fixed;
@@ -160,6 +142,37 @@ pre {
 
     .grid-2 {
         margin-top: 25vh;
+    }
+
+    /* Icon Animation Styles */
+
+    .nav-icon .show-pixel {
+        display: none;
+    }
+    
+    .nav-icon:hover .hide-pixel {
+        display: none;
+    }
+    
+    .nav-icon:hover .show-pixel {
+        display: initial;
+    }
+    
+    .cursor:hover {
+        fill: var(--hyperlink-blue);
+    }
+    
+    .nav-icon:hover:not(.cursor) {
+        fill: var(--hyperlink-blue);
+        cursor: pointer;
+        transform: translateY(3px);
+        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .nav-icon:not(.cursor) {
+        transform: translateY(0px);
+        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        fill: #000;
     }
     
 }
