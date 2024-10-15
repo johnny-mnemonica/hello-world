@@ -1,0 +1,20 @@
+<footer class="clip-outer">
+    <div class="clip-inner footer-inner">
+        <div class="black-bg"></div>
+        {% comment %} <div class="btn-container-2">
+            <img src="/sun.svg">
+        </div> {% endcomment %}
+        <fieldset>
+            <legend class="visually-hidden">Brightness Mode</legend>
+            <input type="radio" id="dark-mode" name="brightness">
+            <label for="dark-mode">dark</label>
+            <input type="radio" id="light-mode" name="brightness" checked>
+            <label for="light-mode">light</label>
+        </fieldset>
+        {% comment %} <img src="/moon.svg"> {% endcomment %}
+        <input type="checkbox" id="enable-slider" name="enable-slider">
+        {% comment %} <label for="vehicle1"> I have a bike</label><br> {% endcomment %}
+        <input type="range" id="color-slider" name="color-slider" min="0" max="359" value="0" step="1" disabled/>
+        <label for="color-slider">Color Slider</label>
+    </div>
+</footer> 

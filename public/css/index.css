@@ -40,13 +40,9 @@ h1 {
     /* font-family: var(--font-family-base); */
 }
 
-a h1 {
+.left a {
     text-decoration: none;
     color: var(--font-color);
-}
-
-a {
-    text-decoration: none;
 }
 
 h2 { 
@@ -113,6 +109,24 @@ pre {
     display: none;
 }
 
+/* Link Styles */
+
+a {
+    text-decoration-style: double;
+    /* text-underline-offset: 4px; */
+    /* text-underline-position: under; */
+    text-decoration-skip-ink: none;
+    color: forestgreen;
+    text-decoration-color: lime;
+    text-decoration-thickness: 1.5px;
+}
+
+a:hover {
+    text-decoration-color: magenta;
+    color: orchid;
+}
+
+
 @media screen and (min-width: 750px) {
     .icon-box-mobile {
         display: none;
@@ -175,4 +189,120 @@ pre {
         fill: #000;
     }
     
+}
+
+/* Footer Styles */
+
+footer {
+    width: 100%;
+    height: 50px;
+    /* border-top: 2px solid black */
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+}
+
+.clip-outer {
+    clip-path: polygon(
+      0px 16px,
+      4px 16px,
+      4px 12px,
+      8px 12px,
+      8px 8px,
+      12px 8px,
+      12px 4px,
+      16px 4px,
+      20px 4px,
+      20px 0px,
+      calc(100% - 20px) 0px,
+      calc(100% - 20px) 4px,
+      calc(100% - 12px) 4px,
+      calc(100% - 12px) 8px,
+      calc(100% - 8px) 8px,
+      calc(100% - 8px) 12px,
+      calc(100% - 4px) 12px,
+      calc(100% - 4px) 16px,
+      calc(100% - 4px) 16px,
+      100% 16px,
+      100% 100%,
+      20px 100%,
+      0px 100%,
+      0px calc(100% - 20px)
+    );
+}
+
+.clip-inner {
+    clip-path: polygon(
+      0px 16px,
+      4px 16px,
+      4px 12px,
+      8px 12px,
+      8px 8px,
+      12px 8px,
+      12px 4px,
+      16px 4px,
+      20px 4px,
+      20px 0px,
+      calc(100% - 20px) 0px,
+      calc(100% - 20px) 4px,
+      calc(100% - 12px) 4px,
+      calc(100% - 12px) 8px,
+      calc(100% - 8px) 8px,
+      calc(100% - 8px) 12px,
+      calc(100% - 4px) 12px,
+      calc(100% - 4px) 16px,
+      calc(100% - 4px) 16px,
+      100% 16px,
+      100% 100%,
+      20px 100%,
+      0px 100%,
+      0px calc(100% - 20px)
+    );
+}
+
+.footer-inner {
+    background-color: white;
+    width: 100%;
+    height: 46px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+}
+
+.black-bg {
+    background-color: #000;
+    width: 150px;
+}
+
+footer .fieldset {
+    /* width: 50px; */
+    border-right: 4px solid black;
+}
+
+footer .btn-container-2 {
+    width: 50px;
+    background-color: white;
+    border-right: 4px solid black;
+}
+
+fieldset {
+    border: none;
+}
+
+.visually-hidden { 
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+}
+
+/* .dark-mode {
+    background-color: hsl(0, 0%, 25%);
+} */
+
+html {
+    animation: colorTransition 10s alternate infinite;
 }

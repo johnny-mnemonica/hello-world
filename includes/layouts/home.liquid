@@ -2,7 +2,7 @@
 layout: /layouts/base.liquid
 ---
 
-<div class="grid-container">
+<main class="grid-container">
     <div class="grid-1">
         {% renderFile "./includes/components/left.liquid" %}
     </div>
@@ -12,4 +12,6 @@ layout: /layouts/base.liquid
     <div class="grid-3">
         {% renderFile "./includes/components/right.liquid" %}
     </div>
-</div>
+</main>
+
+{% renderFile "./includes/components/footer.liquid" %}
