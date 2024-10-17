@@ -1,5 +1,4 @@
 // TODOS
-// Save color values into localstorage/cookies for persistance.
 // Figure out system to deal with link colors.
 // Finally: Replace default elements with custom designed icons and buttons.
 // Eventually - selectors for variables?
@@ -30,6 +29,8 @@ function savePreferences() {
   localStorage.setItem("sliderValue", sliderValue);
   localStorage.setItem("brightnessMode", darkModeRadio.checked ? "dark-mode" : "light-mode");
   localStorage.setItem("sliderEnabled", sliderCheckbox.checked);
+  localStorage.setItem("lightness", lightness);
+  localStorage.setItem("saturation", saturation);
 }
 
 function updateBackgroundColor() {
@@ -39,6 +40,30 @@ function updateBackgroundColor() {
     ? `hsl(0, 0%, ${lightness}%)`
     : `hsl(${sliderValue}, ${saturation}%, ${lightness}%)`;
 }
+
+// Load saved UI preferences from localStorage
+window.addEventListener("load", () => {
+  const savedSliderValue = localStorage.getItem("sliderValue");
+  const savedBrightnessMode = localStorage.getItem("brightnessMode");
+  const isSliderEnabled = localStorage.getItem("sliderEnabled") === "true";
+
+  if (savedSliderValue) {
+    sliderValue = parseInt(savedSliderValue, 10);
+    colorSlider.value = sliderValue;
+  }
+
+  if (savedBrightnessMode) {
+    document.getElementById(savedBrightnessMode).checked = true;
+    lightness = savedBrightnessMode === "dark-mode" ? DARK_LIGHTNESS : LIGHT_LIGHTNESS;
+    document.documentElement.setAttribute(
+      "data-theme",
+      savedBrightnessMode === "dark-mode" ? "dark" : "light"
+    );
+  }
+
+  sliderCheckbox.checked = isSliderEnabled;
+  colorSlider.disabled = !isSliderEnabled;
+});
 
 // Listens for change in enable/disable slider checkbox
 sliderCheckbox.addEventListener("change", function () {
@@ -57,7 +82,7 @@ sliderCheckbox.addEventListener("change", function () {
 brightnessModeRadios.forEach((radio) => {
   radio.addEventListener("change", function () {
     if (this.checked) {
-      sliderValue = colorSlider.value // Store the value locally before making any changes
+      sliderValue = colorSlider.value // Store the value before making any changes
       lightness = this.id === "dark-mode" ? DARK_LIGHTNESS : LIGHT_LIGHTNESS;
       document.documentElement.setAttribute(
         "data-theme",
@@ -72,6 +97,7 @@ brightnessModeRadios.forEach((radio) => {
 
 function updateSlider() {
   sliderValue = parseInt(this.value, 10);
+  darkModeCheck()
   updateBackgroundColor();
   savePreferences();
 }

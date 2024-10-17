@@ -10,6 +10,16 @@ title: 	⊂(◉‿◉)つ
     <title>{{ title }}</title>
     <link rel="stylesheet" type="text/css" href="/css/index.css">
   </head>
+  <script>
+      const savedSliderValue = localStorage.getItem("sliderValue");
+      const savedLightness = localStorage.getItem("lightness");
+      const savedSaturation = localStorage.getItem("saturation");
+      const savedSliderEnabled = localStorage.getItem("sliderEnabled") === "true";
+    
+      if (savedSliderValue && savedLightness && savedSaturation) {
+        savedSliderEnabled ? document.querySelector("html").style.backgroundColor = `hsl(${parseInt(savedSliderValue, 10)}, ${savedSaturation}%, ${savedLightness}%)` : document.querySelector("html").style.backgroundColor = `hsl(0, 0%, ${savedLightness}%)`;
+      }
+  </script>
   <body>
     {{ content }}
   <script src="/scripts/main.js"></script>
