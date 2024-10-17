@@ -1,302 +1,323 @@
-@import url('./reset.css');
+@import url("./reset.css");
 
 @font-face {
-    font-family: "PP Neuebit";
-    src:
-        url("../fonts/PPNeueBit-Regular.otf") format("opentype"),
-        url("../fonts/PPNeueBit-Regular.ttf") format("truetype"),
-        url("../fonts/PPNeueBit-Regular.woff") format("woff"),
-        url("../fonts/PPNeueBit-Regular.woff2") format("woff2");
+  font-family: "PP Neuebit";
+  src: url("../fonts/PPNeueBit-Regular.otf") format("opentype"),
+    url("../fonts/PPNeueBit-Regular.ttf") format("truetype"),
+    url("../fonts/PPNeueBit-Regular.woff") format("woff"),
+    url("../fonts/PPNeueBit-Regular.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: "PP Neuebit";
-    src:
-        url("../fonts/PPNeueBit-Bold.otf") format("opentype"),
-        url("../fonts/PPNeueBit-Bold.ttf") format("truetype"),
-        url("../fonts/PPNeueBit-Bold.woff") format("woff"),
-        url("../fonts/PPNeueBit-Bold.woff2") format("woff2");
-    font-weight: bold;
+  font-family: "PP Neuebit";
+  src: url("../fonts/PPNeueBit-Bold.otf") format("opentype"),
+    url("../fonts/PPNeueBit-Bold.ttf") format("truetype"),
+    url("../fonts/PPNeueBit-Bold.woff") format("woff"),
+    url("../fonts/PPNeueBit-Bold.woff2") format("woff2");
+  font-weight: bold;
 }
 
 :root {
-    --font-family-base: PP NeueBit, Arial, Helvetica, sans-serif;
-    --font-size-base: 1.5rem;
-    --font-size-heading: 3rem;
-    --font-size-heading-mobile: 2.5rem;
-    --line-height-base: 1;
-    --hyperlink-blue: #0000EE;
-    --font-color: #000;
+  --font-family-base: PP NeueBit, Arial, Helvetica, sans-serif;
+  --font-size-base: 1.5rem;
+  --font-size-heading: 3rem;
+  --font-size-heading-mobile: 2.5rem;
+  --line-height-base: 1;
+}
+
+/* Color variables */
+:root {
+  --icon-color: #0000ee;
+  --font-color: #000;
+  --url-color: forestgreen;
+  --url-underline-color: lime;
+  --url-color-hover: magenta;
+  --url-underline-color-hover: orchid;
+}
+
+[data-theme="dark"] {
+  --icon-color: #fff;
+  --font-color: #fff;
+  --url-color: lime;
+  --url-underline-color: forestgreen;
+  --url-color-hover: orchid;
+  --url-underline-color-hover: magenta;
 }
 
 body {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--font-color);
 }
 
 h1 {
-    font-size: var(--font-size-heading);
-    /* font-family: var(--font-family-base); */
+  font-size: var(--font-size-heading);
+  /* font-family: var(--font-family-base); */
 }
 
 .left a {
-    text-decoration: none;
-    color: var(--font-color);
+  text-decoration: none;
+  color: var(--font-color);
 }
 
-h2 { 
-    font-size: 2rem;
+h2 {
+  font-size: 2rem;
 }
 
 pre {
-    font-size: 12px;;
+  font-size: 12px;
 }
 
 /* Home Grid Layout */
 
 .grid-container {
-    padding: 30px;
+  padding: 30px;
 }
 
 .grid-1 h1 {
-    line-height: normal;
-    /* position: fixed; */
+  line-height: normal;
+  /* position: fixed; */
 }
 
 .grid-2 {
-    grid-column: 2 / 4;
-    margin-top: 15vh;
+  grid-column: 2 / 4;
+  margin-top: 15vh;
 }
 
 .grid-3 {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  justify-content: end;
 }
 
 .left {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1.75rem;
 }
 
 /* Icon Nav Styles */
 
 .icon-box {
-    display: flex; 
+  display: flex;
 }
 
 .icon-box-desktop {
-    display: none;
+  display: none;
 }
 
 .icon-box-mobile {
-    display: flex;
-    justify-content: center;
-    flex-shrink: 0;
-    /* position: fixed; */
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  /* position: fixed; */
 }
 
 .icon-box a {
-    margin-right: 2px;
+  margin-right: 2px;
 }
 
-.icon-box a:last-child  {
-    margin-right: 0px;
+.icon-box a:last-child {
+  margin-right: 0px;
 }
 
 .nav-icon .show-pixel {
-    display: none;
+  display: none;
 }
 
 /* Link Styles */
 
 a {
-    text-decoration-style: double;
-    /* text-underline-offset: 4px; */
-    /* text-underline-position: under; */
-    text-decoration-skip-ink: none;
-    color: forestgreen;
-    text-decoration-color: lime;
-    text-decoration-thickness: 1.5px;
+  text-decoration-style: double;
+  /* text-underline-offset: 4px; */
+  /* text-underline-position: under; */
+  text-decoration-skip-ink: none;
+  color: var(--url-color);
+  text-decoration-color: var(--url-underline-color);
+  text-decoration-thickness: 1.5px;
 }
 
 a:hover {
-    text-decoration-color: magenta;
-    color: orchid;
+  text-decoration-color: var(--url-underline-color-hover);
+  color: var(--url-color-hover);
 }
 
-
 @media screen and (min-width: 750px) {
-    .icon-box-mobile {
-        display: none;
-    }
+  .icon-box-mobile {
+    display: none;
+  }
 
-    .icon-box a {
-        margin-right: 5px;
-    }
+  .icon-box a {
+    margin-right: 5px;
+  }
 
-    .icon-box-desktop {
-        display: flex;
-        justify-content: center;
-        position: fixed;
-    }
-    
-    .grid-1 h1 {
-        line-height: normal;
-        position: fixed;
-    }
+  .icon-box-desktop {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+  }
 
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 40px;
-        padding: 40px;
-    }
+  .grid-1 h1 {
+    line-height: normal;
+    position: fixed;
+  }
 
-    .grid-2 {
-        margin-top: 25vh;
-    }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    padding: 40px;
+  }
 
-    /* Icon Animation Styles */
+  .grid-2 {
+    margin-top: 25vh;
+  }
 
-    .nav-icon .show-pixel {
-        display: none;
-    }
-    
-    .nav-icon:hover .hide-pixel {
-        display: none;
-    }
-    
-    .nav-icon:hover .show-pixel {
-        display: initial;
-    }
-    
-    .cursor:hover {
-        fill: var(--hyperlink-blue);
-    }
-    
-    .nav-icon:hover:not(.cursor) {
-        fill: var(--hyperlink-blue);
-        cursor: pointer;
-        transform: translateY(3px);
-        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-    
-    .nav-icon:not(.cursor) {
-        transform: translateY(0px);
-        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        fill: #000;
-    }
-    
+  /* Icon Animation Styles */
+
+  .nav-icon {
+    fill: var(--font-color);
+  }
+
+  .nav-icon:hover {
+    fill: var(--icon-color);
+  }
+
+  .nav-icon .show-pixel {
+    display: none;
+  }
+
+  .nav-icon:hover .hide-pixel {
+    display: none;
+  }
+
+  .nav-icon:hover .show-pixel {
+    display: initial;
+  }
+
+  /* .cursor:hover {
+    fill: var(--icon-color);
+  } */
+
+  .nav-icon:hover:not(.cursor) {
+    /* fill: var(--icon-color); */
+    /* cursor: pointer; */
+    transform: translateY(3px);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .nav-icon:not(.cursor) {
+    transform: translateY(0px);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
 }
 
 /* Footer Styles */
 
 footer {
-    width: 100%;
-    height: 50px;
-    /* border-top: 2px solid black */
-    background-color: #000;
-    position: fixed;
-    bottom: 0;
+  width: 100%;
+  height: 50px;
+  /* border-top: 2px solid black */
+  background-color: #000;
+  position: fixed;
+  bottom: 0;
 }
 
 .clip-outer {
-    clip-path: polygon(
-      0px 16px,
-      4px 16px,
-      4px 12px,
-      8px 12px,
-      8px 8px,
-      12px 8px,
-      12px 4px,
-      16px 4px,
-      20px 4px,
-      20px 0px,
-      calc(100% - 20px) 0px,
-      calc(100% - 20px) 4px,
-      calc(100% - 12px) 4px,
-      calc(100% - 12px) 8px,
-      calc(100% - 8px) 8px,
-      calc(100% - 8px) 12px,
-      calc(100% - 4px) 12px,
-      calc(100% - 4px) 16px,
-      calc(100% - 4px) 16px,
-      100% 16px,
-      100% 100%,
-      20px 100%,
-      0px 100%,
-      0px calc(100% - 20px)
-    );
+  clip-path: polygon(
+    0px 16px,
+    4px 16px,
+    4px 12px,
+    8px 12px,
+    8px 8px,
+    12px 8px,
+    12px 4px,
+    16px 4px,
+    20px 4px,
+    20px 0px,
+    calc(100% - 20px) 0px,
+    calc(100% - 20px) 4px,
+    calc(100% - 12px) 4px,
+    calc(100% - 12px) 8px,
+    calc(100% - 8px) 8px,
+    calc(100% - 8px) 12px,
+    calc(100% - 4px) 12px,
+    calc(100% - 4px) 16px,
+    calc(100% - 4px) 16px,
+    100% 16px,
+    100% 100%,
+    20px 100%,
+    0px 100%,
+    0px calc(100% - 20px)
+  );
 }
 
 .clip-inner {
-    clip-path: polygon(
-      0px 16px,
-      4px 16px,
-      4px 12px,
-      8px 12px,
-      8px 8px,
-      12px 8px,
-      12px 4px,
-      16px 4px,
-      20px 4px,
-      20px 0px,
-      calc(100% - 20px) 0px,
-      calc(100% - 20px) 4px,
-      calc(100% - 12px) 4px,
-      calc(100% - 12px) 8px,
-      calc(100% - 8px) 8px,
-      calc(100% - 8px) 12px,
-      calc(100% - 4px) 12px,
-      calc(100% - 4px) 16px,
-      calc(100% - 4px) 16px,
-      100% 16px,
-      100% 100%,
-      20px 100%,
-      0px 100%,
-      0px calc(100% - 20px)
-    );
+  clip-path: polygon(
+    0px 16px,
+    4px 16px,
+    4px 12px,
+    8px 12px,
+    8px 8px,
+    12px 8px,
+    12px 4px,
+    16px 4px,
+    20px 4px,
+    20px 0px,
+    calc(100% - 20px) 0px,
+    calc(100% - 20px) 4px,
+    calc(100% - 12px) 4px,
+    calc(100% - 12px) 8px,
+    calc(100% - 8px) 8px,
+    calc(100% - 8px) 12px,
+    calc(100% - 4px) 12px,
+    calc(100% - 4px) 16px,
+    calc(100% - 4px) 16px,
+    100% 16px,
+    100% 100%,
+    20px 100%,
+    0px 100%,
+    0px calc(100% - 20px)
+  );
 }
 
 .footer-inner {
-    background-color: white;
-    width: 100%;
-    height: 46px;
-    position: fixed;
-    bottom: 0;
-    display: flex;
+  background-color: white;
+  width: 100%;
+  height: 46px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
 }
 
 .black-bg {
-    background-color: #000;
-    width: 150px;
+  background-color: #000;
+  width: 150px;
 }
 
 footer .fieldset {
-    /* width: 50px; */
-    border-right: 4px solid black;
+  /* width: 50px; */
+  border-right: 4px solid black;
 }
 
 footer .btn-container-2 {
-    width: 50px;
-    background-color: white;
-    border-right: 4px solid black;
+  width: 50px;
+  background-color: white;
+  border-right: 4px solid black;
 }
 
 fieldset {
-    border: none;
+  border: none;
 }
 
-.visually-hidden { 
-    position: absolute !important;
-    height: 1px; 
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-    white-space: nowrap; /* added line */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }
 
 /* .dark-mode {
@@ -304,5 +325,5 @@ fieldset {
 } */
 
 html {
-    animation: colorTransition 10s alternate infinite;
+  animation: colorTransition 10s alternate infinite;
 }
