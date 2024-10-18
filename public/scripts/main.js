@@ -59,6 +59,10 @@ window.addEventListener("load", () => {
       "data-theme",
       savedBrightnessMode === "dark-mode" ? "dark" : "light"
     );
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+    document.querySelector("html").style.backgroundColor = '#fff';
+    localStorage.clear();
   }
 
   sliderCheckbox.checked = isSliderEnabled;

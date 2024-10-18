@@ -16,8 +16,12 @@ title: 	⊂(◉‿◉)つ
       const savedSaturation = localStorage.getItem("saturation");
       const savedSliderEnabled = localStorage.getItem("sliderEnabled") === "true";
     
-      if (savedSliderValue && savedLightness && savedSaturation) {
-        savedSliderEnabled ? document.querySelector("html").style.backgroundColor = `hsl(${parseInt(savedSliderValue, 10)}, ${savedSaturation}%, ${savedLightness}%)` : document.querySelector("html").style.backgroundColor = `hsl(0, 0%, ${savedLightness}%)`;
+      if (savedLightness && savedSaturation) {
+        savedSliderEnabled && savedSliderValue ? document.querySelector("html").style.backgroundColor = `hsl(${parseInt(savedSliderValue, 10)}, ${savedSaturation}%, ${savedLightness}%)` : document.querySelector("html").style.backgroundColor = `hsl(0, 0%, ${savedLightness}%)`;
+      } else {
+        document.querySelector("html").setAttribute("data-theme", "light");
+        document.querySelector("html").style.backgroundColor = '#fff';
+        localStorage.clear();
       }
   </script>
   <body>
