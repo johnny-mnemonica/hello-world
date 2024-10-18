@@ -6,10 +6,14 @@
         </div> {% endcomment %}
         <fieldset>
             <legend class="visually-hidden">Brightness Mode</legend>
-            <input type="radio" id="dark-mode" name="brightness">
-            <label for="dark-mode">dark</label>
             <input type="radio" id="light-mode" name="brightness" checked>
-            <label for="light-mode">light</label>
+            <label for="light-mode">
+                {% renderFile "./includes/icons/sun.liquid" %}
+            </label>
+            <input type="radio" id="dark-mode" name="brightness">
+            <label for="dark-mode">
+                {% renderFile "./includes/icons/moon.liquid" %}
+            </label>
         </fieldset>
         {% comment %} <img src="/moon.svg"> {% endcomment %}
         <input type="checkbox" id="enable-slider" name="enable-slider">

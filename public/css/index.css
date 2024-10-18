@@ -328,3 +328,56 @@ fieldset {
 html {
   transition: background-color .25s linear;
 }
+
+footer {
+  color: #000;
+}
+
+footer input[type=radio] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+footer fieldset {
+  display: flex;
+  padding: 0;
+  /* gap: 2px;
+  background-color: #000; */
+}
+
+fieldset svg {
+  cursor: pointer;
+}
+
+fieldset svg {
+  color: #fff;
+  fill: #000;
+}
+
+input[type=radio]:checked + label svg {
+  color: #000;
+  fill: #fff;
+}
+
+fieldset #dark-mode {
+  color: #000;
+  fill: #fff;
+}
+
+input[type=radio]:hover + label svg {
+  color: #000;
+  fill: #fff;
+}
+
+/* When the user focuses the label via keyboard... */
+input[type=radio]:focus + label {
+  color: #000;
+  fill: #fff;
+}
+
