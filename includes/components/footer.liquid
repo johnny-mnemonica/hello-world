@@ -1,9 +1,8 @@
 <footer class="clip-outer">
     <div class="clip-inner footer-inner">
-        <div class="black-bg"></div>
-        {% comment %} <div class="btn-container-2">
-            <img src="/sun.svg">
-        </div> {% endcomment %}
+        <div class="black-bg">
+            <span class="clock" id="MyClockDisplay" style="color: #fff">12:34 PM</span>
+        </div>
         <fieldset>
             <legend class="visually-hidden">Brightness Mode</legend>
             <input type="radio" id="light-mode" name="brightness" checked>
@@ -15,10 +14,26 @@
                 {% renderFile "./includes/icons/moon.liquid" %}
             </label>
         </fieldset>
-        {% comment %} <img src="/moon.svg"> {% endcomment %}
         <input type="checkbox" id="enable-slider" name="enable-slider">
-        {% comment %} <label for="vehicle1"> I have a bike</label><br> {% endcomment %}
-        <input type="range" id="color-slider" name="color-slider" min="0" max="359" value="0" step="1" disabled/>
-        <label for="color-slider">Color Slider</label>
+        <label for="enable-slider">{% renderFile "./includes/icons/rainbow.liquid" %}</label><br>
+        <div class="slidecontainer">
+        <div class="pixel-corners--wrapper">
+        <input class="slider" type="range" id="color-slider" name="color-slider" min="0" max="359" value="0" step="1" disabled/>
+        <label class="visually-hidden" for="color-slider">Background color hue slider</label>
+        </div>
+        </div>
+        <div class="footer-link-wrapper" style="background-color: #000">
+            <span>ME</span>
+        </div>
+        <div class="footer-link-wrapper" style="background-color: #000">
+            <span>CV</span>
+        </div>
+        <div class="footer-link-wrapper" style="background-color: #000">
+            <span>WORK</span>
+        </div>
+        <div class="footer-link-wrapper" style="background-color: #000">
+            <span>CONTACT</span>
+        </div>
+        <div class="filler">
     </div>
 </footer> 

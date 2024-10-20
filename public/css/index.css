@@ -17,6 +17,11 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: "Pixel LCD";
+  src: url("../fonts/Pixel-LCD-7.ttf") format("truetype");
+}
+
 :root {
   --font-family-base: PP NeueBit, Arial, Helvetica, sans-serif;
   --font-size-base: 1.5rem;
@@ -33,6 +38,7 @@
   --url-underline-color: lime;
   --url-color-hover: magenta;
   --url-underline-color-hover: orchid;
+  --thumb-color: #000;
 }
 
 [data-theme="dark"] {
@@ -53,7 +59,6 @@ body {
 
 h1 {
   font-size: var(--font-size-heading);
-  /* font-family: var(--font-family-base); */
 }
 
 .left a {
@@ -77,7 +82,6 @@ pre {
 
 .grid-1 h1 {
   line-height: normal;
-  /* position: fixed; */
 }
 
 .grid-2 {
@@ -195,13 +199,7 @@ a:hover {
     display: initial;
   }
 
-  /* .cursor:hover {
-    fill: var(--icon-color);
-  } */
-
   .nav-icon:hover:not(.cursor) {
-    /* fill: var(--icon-color); */
-    /* cursor: pointer; */
     transform: translateY(3px);
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
@@ -216,8 +214,7 @@ a:hover {
 
 footer {
   width: 100%;
-  height: 50px;
-  /* border-top: 2px solid black */
+  height: 52px;
   background-color: #000;
   position: fixed;
   bottom: 0;
@@ -284,19 +281,13 @@ footer {
 .footer-inner {
   background-color: white;
   width: 100%;
-  height: 46px;
+  height: 48px;
   position: fixed;
   bottom: 0;
   display: flex;
 }
 
-.black-bg {
-  background-color: #000;
-  width: 150px;
-}
-
 footer .fieldset {
-  /* width: 50px; */
   border-right: 4px solid black;
 }
 
@@ -339,6 +330,28 @@ footer input[type=radio] {
   width: 1px;
 }
 
+footer input[type=checkbox] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+footer input[type=checkbox] + label {
+  filter: grayscale();
+  /* transition: all .10s ease-in-out; */
+  cursor: pointer;
+}
+
+footer input[type=checkbox]:checked + label {
+  filter: none;
+  /* transition: all .10s ease-in-out; */
+}
+
 footer fieldset {
   display: flex;
   padding: 0;
@@ -354,10 +367,13 @@ fieldset svg {
   transition: all 0.10s ease-in-out 
 }
 
+
 input[type=radio]:checked + label svg {
   color: #000;
   fill: #fff;
-  transition: all 0.10s ease-in-out 
+  cursor: default;
+  transition: all 0.10s ease-in-out; 
+  /* display: none; */
 }
 
 input[type=radio]:hover + label svg {
@@ -367,8 +383,184 @@ input[type=radio]:hover + label svg {
 }
 
 /* When the user focuses the label via keyboard... */
-input[type=radio]:focus + label {
-  color: #000;
-  fill: #fff;
+input[type=radio]:focus-visible + label {
+  border: 4px solid red;
+}
+
+footer span {
+  font-family: Pixel LCD;
+}
+
+footer .filler {
+  flex-grow: 1;
+  /* background-image: linear-gradient(45deg, #000000 8.33%, #ffffff 8.33%, #ffffff 50%, #000000 50%, #000000 58.33%, #ffffff 58.33%, #ffffff 100%);
+background-size: 33.94px 33.94px; */
+  background: #000;
+}
+
+footer .clock {
+  font-size: 40px;
+}
+
+footer .black-bg {
+  background-color: #000;
+  /* width: 150px; */
+  padding: 0px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12px;
+}
+
+
+.slidecontainer {
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; 
+  height: 100%; 
+  background: #fff; 
+  outline: none;
+  padding: 0 2px;
+  font-size: x-small; /* Firefox */
+}
+
+.pixel-corners--wrapper:has(input[type=range]:disabled)::after {
+  background: grey;
+  transition: .2s ease-in-out;
+  cursor: not-allowed;
+}
+
+input[type=range]:disabled::-webkit-slider-thumb {
+  background-color: grey;
+  -webkit-mask-image: url(../slider-thumb.svg);
+  mask-image: url(../slider-thumb.svg);
+  transition: .2s ease-in-out;
+  cursor: not-allowed;
+}
+
+input[type=range]:disabled::-moz-range-thumb {
+  background-color: grey;
+  -webkit-mask-image: url(../slider-thumb.svg);
+  mask-image: url(../slider-thumb.svg);
+  transition: .2s ease-in-out;
+  cursor: not-allowed;
+}
+
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 28px;
+  width: 16px;
+  border: none;
+  overflow: visible;
+  z-index: 9999;
+  cursor: pointer;
+  position: relative;
+  -webkit-mask-image: url(../slider-thumb.svg);
+  mask-image: url(../slider-thumb.svg);
+  /* background-image: url(../slider-thumb.svg); */
+  background-size: cover;
+  transition: .2s ease-in-out;
+  margin-bottom: 3px;
+  background-color: var(--thumb-color);
+}
+
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 28px;
+  width: 16px;
+  border: none;
+  overflow: visible;
+  z-index: 9999;
+  cursor: pointer;
+  position: relative;
+  /* -webkit-mask-image: url(../slider-thumb.svg); */
+  mask-image: url(../slider-thumb.svg);
+  background-color: var(--thumb-color);
+  /* background-image: url(../slider-thumb.svg); */
+  background-size: cover;
+  transition: .2s ease-in-out;
+  margin-bottom: 3px;
+  transition: .2s ease-in-out;
+}
+
+.pixel-corners--wrapper {
+  width: fit-content;
+  height: fit-content;
+}
+
+.pixel-corners--wrapper::after {
+  content: "";
+  position: absolute;
+  clip-path: polygon(0px calc(100% - 3px),
+    3px calc(100% - 3px),
+    3px 100%,
+    calc(100% - 3px) 100%,
+    calc(100% - 3px) calc(100% - 3px),
+    100% calc(100% - 3px),
+    100% 3px,
+    calc(100% - 3px) 3px,
+    calc(100% - 3px) 0px,
+    3px 0px,
+    3px 3px,
+    0px 3px,
+    0px 50%,
+    6px 50%,
+    6px 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) calc(100% - 6px),
+    6px calc(100% - 6px),
+    6px 50%,
+    0px 50%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000;
+  display: block;
+  pointer-events: none;
+  z-index: 1;
+  transition: .2s ease-in-out;
+}
+
+.pixel-corners--wrapper {
+  width: 100%;
+  height: 15px;
+  position: relative;
+}
+
+.footer-link-wrapper {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  border: 4px solid white;
+}
+
+.footer-link-wrapper span {
+  color: #fff;
+  font-size: 3.5rem;
+  font-family: var(--font-family-base);
+  font-weight: bold;
+  padding: 0 10px;
+  margin-top: 5px;
+}
+
+input[type="range"]:focus-visible::-webkit-slider-thumb {
+  border: 3px solid red;
+}
+
+input[type="range"]:focus-visible::-moz-range-thumb {
+  border: 3px solid red;  
+}
+
+input[type="checkbox"]:focus-visible + label svg {
+  border: 4px solid red;  
 }
 
