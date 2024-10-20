@@ -136,3 +136,29 @@ function showTime() {
 
 showTime();
 
+document.addEventListener("mousemove", (event) => {
+  const pupils = document.querySelector("#pupils");
+
+  if (pupils) {
+    movePupils(event, pupils);
+  }
+});
+
+function movePupils(event, pupils) {
+  const svg = pupils.closest("svg"); // Get the parent SVG to calculate bounding box
+  const svgRect = svg.getBoundingClientRect();
+
+  const svgCenterX = svgRect.left + svgRect.width / 2;
+  const svgCenterY = svgRect.top + svgRect.height / 2;
+
+  // Calculate angle and movement based on mouse position
+  const angle = Math.atan2(event.clientY - svgCenterY, event.clientX - svgCenterX);
+  const maxDistance = Math.min(svgRect.width, svgRect.height) / 10; // Restrict movement
+
+  const offsetX = Math.cos(angle) * maxDistance;
+  const offsetY = Math.sin(angle) * maxDistance;
+
+  // Apply translation to the pupils
+  pupils.setAttribute("transform", `translate(${offsetX}, ${offsetY})`);
+}
+
