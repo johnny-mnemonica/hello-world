@@ -1,4 +1,8 @@
-<footer class="clip-outer">
+<footer class="footer-slide slide-out">
+    <button id="toggle-footer">
+        <div class="button-inner">^</div>
+    </button>
+<div class="footer clip-outer">
     <div class="clip-inner footer-inner">
         <div class="black-bg">
             <span class="clock" id="MyClockDisplay" style="color: #fff">12:34 PM</span>
@@ -22,6 +26,9 @@
         <label class="visually-hidden" for="color-slider">Background color hue slider</label>
         </div>
         </div>
+        {% comment %} <div class="filler-tablet">
+        </div> {% endcomment %}
+        <div class="footer-link-container">
         <a href="/about" class="footer-link-wrapper">
             <span>ME</span>
         </a>
@@ -34,7 +41,9 @@
         <a href="/contact" class="footer-link-wrapper">
             <span>CONTACT</span>
         </a>
+        </div>
         <div class="filler">
         </div>
         {% renderFile "./includes/icons/eyes.liquid" %}
-</footer> 
+    </div>
+</footer>

@@ -136,29 +136,98 @@ function showTime() {
 
 showTime();
 
-document.addEventListener("mousemove", (event) => {
-  const pupils = document.querySelector("#pupils");
+const pupils = document.querySelector("#pupils"); // Cache the element
 
-  if (pupils) {
-    movePupils(event, pupils);
-  }
-});
+let throttleTimeout;
+let throttledMovePupils; // Declare this variable to hold the throttled function
 
-function movePupils(event, pupils) {
-  const svg = pupils.closest("svg"); // Get the parent SVG to calculate bounding box
+function throttle(callback, delay) {
+  return function (...args) {
+    if (throttleTimeout) return; // Skip if already scheduled
+    throttleTimeout = setTimeout(() => {
+      callback(...args); // Execute the callback
+      throttleTimeout = null; // Reset after execution
+    }, delay);
+  };
+}
+
+function movePupils(event) {
+  const svg = pupils.closest("svg");
   const svgRect = svg.getBoundingClientRect();
 
   const svgCenterX = svgRect.left + svgRect.width / 2;
   const svgCenterY = svgRect.top + svgRect.height / 2;
 
-  // Calculate angle and movement based on mouse position
   const angle = Math.atan2(event.clientY - svgCenterY, event.clientX - svgCenterX);
-  const maxDistance = Math.min(svgRect.width, svgRect.height) / 10; // Restrict movement
+  const maxDistance = Math.min(svgRect.width, svgRect.height) / 10;
 
   const offsetX = Math.cos(angle) * maxDistance;
   const offsetY = Math.sin(angle) * maxDistance;
 
-  // Apply translation to the pupils
   pupils.setAttribute("transform", `translate(${offsetX}, ${offsetY})`);
 }
+
+// Function to toggle mousemove listener based on screen width
+function updatePupilMovement() {
+  const isPupilsVisible = window.getComputedStyle(pupils).display !== 'none';
+  
+  // Create the throttled function once
+  if (!throttledMovePupils) {
+    throttledMovePupils = throttle(movePupils, 30);
+  }
+
+  if (isPupilsVisible) {
+    document.addEventListener("mousemove", throttledMovePupils);
+  } else {
+    document.removeEventListener("mousemove", throttledMovePupils);
+  }
+}
+
+// Initial check
+updatePupilMovement();
+
+// Optional: Listen for resize events to update the listener
+window.addEventListener("resize", updatePupilMovement);
+
+
+const toggleButton = document.getElementById("toggle-footer");
+const footer = document.querySelector(".footer-slide");
+const buttonContent = document.querySelector(".button-inner")
+
+toggleButton.addEventListener("click", () => {
+    if (footer.classList.contains("slide-in")) {
+        footer.classList.remove("slide-in");
+        footer.classList.add("slide-out");
+    } else {
+        footer.classList.remove("slide-out");
+        footer.classList.add("slide-in");
+    }
+});
+// let isFooterVisible = false;
+// const footer = document.querySelector(".footer-slide");
+
+// document.getElementById("toggle-footer").addEventListener("click", () => {
+//   isFooterVisible = !isFooterVisible;
+//   animateFooter(isFooterVisible);
+// });
+
+// function animateFooter(show) {
+//   const start = performance.now();
+//   const duration = 300; // Animation duration in ms
+
+//   function slide(timestamp) {
+//     const elapsed = timestamp - start;
+//     const progress = Math.min(elapsed / duration, 1); // Progress from 0 to 1
+
+//     // Calculate the Y position (hidden: -100%, visible: 0)
+//     const translateY = show ? (1 - progress) * 100 : progress * 100;
+//     footer.style.transform = `translateY(${translateY}%)`;
+
+//     if (progress < 1) {
+//       requestAnimationFrame(slide); // Continue animation
+//     }
+//   }
+
+//   requestAnimationFrame(slide);
+// }
 
