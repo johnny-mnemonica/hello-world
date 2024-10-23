@@ -203,31 +203,19 @@ toggleButton.addEventListener("click", () => {
         footer.classList.add("slide-in");
     }
 });
-// let isFooterVisible = false;
-// const footer = document.querySelector(".footer-slide");
 
-// document.getElementById("toggle-footer").addEventListener("click", () => {
-//   isFooterVisible = !isFooterVisible;
-//   animateFooter(isFooterVisible);
-// });
+// Toggle mobile nav
 
-// function animateFooter(show) {
-//   const start = performance.now();
-//   const duration = 300; // Animation duration in ms
+const mobileMenu = document.querySelector('.mobile-menu');
+const closeIcon = document.querySelector('.close-icon');
+const openIcon = document.querySelector('.open-icon');
+const hamburgerIcon = document.getElementById('toggle-nav');
 
-//   function slide(timestamp) {
-//     const elapsed = timestamp - start;
-//     const progress = Math.min(elapsed / duration, 1); // Progress from 0 to 1
+hamburgerIcon.addEventListener("click", ()=> {
+  mobileMenu.classList.toggle('open-nav');
+  closeIcon.classList.toggle('open-nav');
+  mobileMenu.classList.contains('open-nav') ? openIcon.style.opacity = '0' :
+  openIcon.style.opacity = '1';
+})
 
-//     // Calculate the Y position (hidden: -100%, visible: 0)
-//     const translateY = show ? (1 - progress) * 100 : progress * 100;
-//     footer.style.transform = `translateY(${translateY}%)`;
-
-//     if (progress < 1) {
-//       requestAnimationFrame(slide); // Continue animation
-//     }
-//   }
-
-//   requestAnimationFrame(slide);
-// }
 
