@@ -3,7 +3,7 @@
 // Eventually - selectors for variables?
 // Minify JS
 // Fix light mode bug
-// HSL variables
+
 const LIGHT_SATURATION = 70;
 const DARK_SATURATION = 15;
 const LIGHT_LIGHTNESS = 90;
@@ -20,9 +20,17 @@ let lightness = LIGHT_LIGHTNESS;
 let saturation = LIGHT_SATURATION;
 
 function darkModeCheck() {
-  saturation = darkModeRadio.checked
-    ? DARK_SATURATION
-    : LIGHT_SATURATION;
+  if (!colorSlider.disabled && darkModeRadio.checked) {
+    saturation = DARK_SATURATION;
+    lightness = DARK_LIGHTNESS;
+  } else if (!colorSlider.disabled) {
+    saturation = LIGHT_SATURATION;
+    lightness = LIGHT_LIGHTNESS;
+  } else {
+    // If the color slider is disabled and light mode is selected
+    saturation = LIGHT_SATURATION;
+    lightness = darkModeRadio.checked ? DARK_LIGHTNESS : 100;
+  }
 }
 
 function savePreferences() {
@@ -69,8 +77,6 @@ window.addEventListener("load", () => {
   sliderCheckbox.checked = isSliderEnabled;
   colorSlider.disabled = !isSliderEnabled;
 });
-
-
 
 // Listens for change in enable/disable slider checkbox
 sliderCheckbox.addEventListener("change", function () {
