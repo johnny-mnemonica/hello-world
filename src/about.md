@@ -52,7 +52,7 @@ Sidenote: I tried to find my petpage for you, and I did - but I guess my Photobu
 
 &nbsp;
 
-Despite the extremely depressing poem on my petpage, I have fond memories of long summer days spent indoors teaching myself HTML/CSS via [Lisa Explains it All.](https://www.lissaexplains.com/) Looking back, it was a fun time to be a kid on the internet (if you avoided all the really, really bad stuff.)
+Despite the extremely depressing poem on my petpage, I have fond memories of long summer days spent indoors teaching myself HTML/CSS via [Lissa Explains it All.](https://www.lissaexplains.com/) Looking back, it was a fun time to be a kid on the internet (if you avoided all the really, really bad stuff.)
 
 &nbsp;
 
@@ -76,7 +76,7 @@ But enough waxing poetic. What do I care about when it comes to web dev?
 
 &nbsp;
 
-There is a quote from [Bruno Menari](https://en.wikipedia.org/wiki/Bruno_Munari) that I go back to whenever I’m thinking about about development and design:
+There is a quote from [Bruno Munari](https://en.wikipedia.org/wiki/Bruno_Munari) that I go back to whenever I’m thinking about about development and design:
 
 > “A leaf is beautiful not because it is stylish but because it is natural, created in its exact form by its exact function. A designer tries to make an object as naturally as a tree puts forth a leaf. He does not smother his object with his own personal taste but he tries to be objective. He helps the object, if I may so put it, to make itself by its own proper means [...] Each object takes on its own form. But of course this will not be fixed and final because techniques change, new materials are discovered, and with every innovation the problem arises again and the form of the object may change.”
 
