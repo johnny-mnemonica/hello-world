@@ -19,7 +19,9 @@
             </label>
         </fieldset>
         <input type="checkbox" id="enable-slider" name="enable-slider">
-        <label for="enable-slider">{% renderFile "./includes/icons/rainbow.liquid" %}</label><br>
+        <label for="enable-slider">
+            {% renderFile "./includes/icons/rainbow.liquid" %}
+        </label>
         <div class="slidecontainer">
         <div class="pixel-corners--wrapper">
         <input class="slider" type="range" id="color-slider" name="color-slider" min="0" max="359" value="0" step="1" disabled/>

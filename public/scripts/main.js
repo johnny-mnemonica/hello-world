@@ -1,8 +1,8 @@
 // TODOS
 // Figure out system to deal with link colors.
-// Finally: Replace default elements with custom designed icons and buttons.
 // Eventually - selectors for variables?
-
+// Minify JS
+// Fix light mode bug
 // HSL variables
 const LIGHT_SATURATION = 70;
 const DARK_SATURATION = 15;
@@ -51,32 +51,43 @@ window.addEventListener("load", () => {
     sliderValue = parseInt(savedSliderValue, 10);
     colorSlider.value = sliderValue;
   }
-
+// TODO: move this to base.liquid
   if (savedBrightnessMode) {
     document.getElementById(savedBrightnessMode).checked = true;
     lightness = savedBrightnessMode === "dark-mode" ? DARK_LIGHTNESS : LIGHT_LIGHTNESS;
-    document.documentElement.setAttribute(
-      "data-theme",
-      savedBrightnessMode === "dark-mode" ? "dark" : "light"
-    );
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    document.querySelector("html").style.backgroundColor = '#fff';
-    localStorage.clear();
-  }
+    // document.documentElement.setAttribute(
+    //   "data-theme",
+    //   savedBrightnessMode === "dark-mode" ? "dark" : "light"
+    // );
+  } 
+  // else {
+  //   document.documentElement.setAttribute("data-theme", "light");
+  //   document.querySelector("html").style.backgroundColor = '#fff';
+  //   localStorage.clear();
+  // }
 
   sliderCheckbox.checked = isSliderEnabled;
   colorSlider.disabled = !isSliderEnabled;
 });
 
+
+
 // Listens for change in enable/disable slider checkbox
 sliderCheckbox.addEventListener("change", function () {
-  if (this.checked) {
-    colorSlider.disabled = false;
-  } else {
-    sliderValue = colorSlider.value; // Store the value before disabling
-    colorSlider.disabled = true;
+  // if (this.checked) {
+  //   colorSlider.disabled = false;
+  // } else {
+  //   sliderValue = colorSlider.value; // Store the value before disabling
+  //   colorSlider.disabled = true;
+  // }
+
+  colorSlider.disabled = !this.checked;
+
+  if (!colorSlider.disabled) {
+    sliderValue = parseInt(colorSlider.value, 10);
   }
+
+
   darkModeCheck();
   updateBackgroundColor();
   savePreferences();
@@ -214,8 +225,21 @@ const hamburgerIcon = document.getElementById('toggle-nav');
 hamburgerIcon.addEventListener("click", ()=> {
   mobileMenu.classList.toggle('open-nav');
   closeIcon.classList.toggle('open-nav');
-  mobileMenu.classList.contains('open-nav') ? openIcon.style.opacity = '0' :
-  openIcon.style.opacity = '1';
+
+  if(mobileMenu.classList.contains('open-nav')) {
+    openIcon.style.opacity = '0';
+    document.documentElement.style.maxHeight = "100dvh";
+    document.documentElement.style.overflow = "clip";
+  } else {
+    openIcon.style.opacity = '1';
+    document.documentElement.style.maxHeight = "initial";
+    document.documentElement.style.overflow = "auto";
+  }
 })
 
+// Open all external links in new tab
+
+Array.from(document.links)
+    .filter(link => link.hostname != window.location.hostname)
+    .forEach(link => link.target = '_blank');
 

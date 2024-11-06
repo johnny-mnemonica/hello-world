@@ -56,14 +56,17 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--font-color);
+  line-height: 1.05;
 }
 
 h1 {
   font-size: var(--font-size-h1);
+  line-height: normal;
 }
 
 h2 {
   font-size: var(--font-size-h2);
+  line-height: normal;
 }
 
 .left a {
@@ -88,7 +91,8 @@ pre {
 
 .grid-2 {
   grid-column: 2 / 4;
-  margin-top: 15vh;
+  margin-top: 160px;
+  padding-bottom: 60px;
 }
 
 .grid-3 {
@@ -144,6 +148,11 @@ a {
 }
 
 a:hover {
+  text-decoration-color: var(--url-underline-color-hover);
+  color: var(--url-color-hover);
+}
+
+a:focus {
   text-decoration-color: var(--url-underline-color-hover);
   color: var(--url-color-hover);
 }
@@ -213,6 +222,10 @@ a:hover {
 }
 
 /* Footer Styles */
+
+footer {
+  z-index: 89;
+}
 
 .footer {
   width: 100%;
@@ -346,12 +359,16 @@ html {
   position: absolute !important;
   white-space: nowrap;
   width: 1px;
+  appearance: none;
+  pointer-events: none;
 }
 
 .footer input[type=checkbox] + label {
   filter: grayscale();
   /* transition: all .10s ease-in-out; */
   cursor: pointer;
+  will-change: filter;
+  /* touch-action: none; */
 }
 
 .footer input[type=checkbox]:checked + label {
@@ -493,7 +510,7 @@ input[type="range"]::-webkit-slider-thumb {
   mask-image: url(../slider-thumb.svg);
   /* background-image: url(../slider-thumb.svg); */
   background-size: cover;
-  transition: .2s ease-in-out;
+  /* transition: .2s ease-in-out; */
   margin-bottom: 3px;
   background-color: var(--thumb-color);
 }
@@ -512,9 +529,8 @@ input[type="range"]::-moz-range-thumb {
   background-color: var(--thumb-color);
   /* background-image: url(../slider-thumb.svg); */
   background-size: cover;
-  transition: .2s ease-in-out;
+  /* transition: .2s ease-in-out; */
   margin-bottom: 3px;
-  transition: .2s ease-in-out;
 }
 
 .pixel-corners--wrapper {
@@ -706,9 +722,10 @@ footer .button-inner {
 }
 
 .mobile-menu {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
-  background-color: rgba(238, 238, 238, 0.9);
+  background-color: rgba(238, 238, 238, 0.95);
+  /* backdrop-filter: blur(10px); */
   position: absolute;
   top: 0;
   left: 0;
@@ -727,7 +744,7 @@ footer .button-inner {
 .mobile-menu li {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 .mobile-menu a {
@@ -756,6 +773,68 @@ footer .button-inner {
   position: relative;
 }
 
+.pill {
+  margin-right: 8px;
+  border: 1px solid var(--font-color);
+  border-radius: 20px;
+  padding: 4px 12px;
+  height: fit-content;
+}
+
+.pill-container {
+  display: flex;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.swiper-slide {
+  cursor: pointer;
+}
+
+.portfolio-wrapper {
+  margin-top: 65px;
+}
+
+.swiper {
+  margin: 22px 0;
+}
+
+.project-container:not(:first-child) {
+  margin-top: 80px;
+}
+
+.project-container:last-child {
+  margin-bottom: 80px;
+}
+
+.projects-end {
+  margin-bottom: 5px;
+}
+
+.btt { 
+  /* font-size: 1.25rem; */
+  /* text-decoration: none; */
+}
+
+blockquote {
+  /* background: #f9f9f9; */
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+/* Smooth scrolling IF user doesn't have a preference due to motion sensitivities */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
 @media (max-width: 1187px) { 
   .eye {
@@ -844,4 +923,20 @@ footer .button-inner {
   .open-nav.close-icon {
     display: block;
   }
+
+  .grid-2 {
+    margin-top: 80px;
+  }
+
+  .portfolio-wrapper {
+    margin-top: 30px;
+  }
+
+  .project-container:not(:first-child) {
+    margin-top: 60px;
+  }
+  
+  .project-container:last-child {
+    margin-bottom: 60px;
+}
 }
