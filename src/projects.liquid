@@ -1,0 +1,39 @@
+---
+layout: /layouts/home.liquid
+title: 	⊂(◉‿◉)つ - projects
+---
+
+<h1># Portfolio</h1>
+
+<div class="portfolio-wrapper">
+{% for project in collections.projects %}
+  <div class="project-container">
+    <h2>{{ project.data.title }}</h2>
+    <span class="italic">{{ project.data.project_date }}</span>
+    <div class="pill-container">
+      {% for tech in project.data.tech_stack %}
+        <div class="pill">
+          <span>{{ tech }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% if project.data.images %}
+          {% for image in project.data.images %}
+            <div class="swiper-slide">
+              <a href="{{ image.externalUrl }}" width="550" target="_blank">
+                <img src="{{ image.url }}"/>
+              </a>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    {{ project.content }}
+  </div>
+{% endfor %}
+</div>
+
+{% comment %} <h2 class="projects-end"># That's all, folks!</h2> {% endcomment %}
+<a class="btt" href="#top">Back to top</a>

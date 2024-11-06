@@ -1,0 +1,52 @@
+<footer class="footer-slide slide-out">
+    <button id="toggle-footer">
+        <div class="button-inner">^</div>
+    </button>
+<div class="footer clip-outer">
+    <div class="clip-inner footer-inner">
+        <div class="black-bg">
+            <span class="clock" id="MyClockDisplay" style="color: #fff">12:34 PM</span>
+        </div>
+        <fieldset>
+            <legend class="visually-hidden">Brightness Mode</legend>
+            <input type="radio" id="light-mode" name="brightness" checked>
+            <label for="light-mode">
+                {% renderFile "./includes/icons/sun.liquid" %}
+            </label>
+            <input type="radio" id="dark-mode" name="brightness">
+            <label for="dark-mode">
+                {% renderFile "./includes/icons/moon.liquid" %}
+            </label>
+        </fieldset>
+        <input type="checkbox" id="enable-slider" name="enable-slider">
+        <label for="enable-slider">
+            {% renderFile "./includes/icons/rainbow.liquid" %}
+        </label>
+        <div class="slidecontainer">
+        <div class="pixel-corners--wrapper">
+        <input class="slider" type="range" id="color-slider" name="color-slider" min="0" max="359" value="0" step="1" disabled/>
+        <label class="visually-hidden" for="color-slider">Background color hue slider</label>
+        </div>
+        </div>
+        {% comment %} <div class="filler-tablet">
+        </div> {% endcomment %}
+        <div class="footer-link-container">
+        <a href="/about" class="footer-link-wrapper">
+            <span>ME</span>
+        </a>
+        <a href="/RekasCV.pdf" target="_blank" class="footer-link-wrapper">
+            <span>CV</span>
+        </a>
+        <a href="/projects" class="footer-link-wrapper">
+            <span>WORK</span>
+        </a>
+        <a href="/contact" class="footer-link-wrapper">
+            <span>CONTACT</span>
+        </a>
+        </div>
+        <div class="filler">
+        </div>
+        {% renderFile "./includes/icons/eyes.liquid" %}
+    </div>
+</div>
+</footer>

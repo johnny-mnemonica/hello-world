@@ -9,8 +9,36 @@ title: 	⊂(◉‿◉)つ
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
   </head>
+  <script>
+      const savedSliderValue = localStorage.getItem("sliderValue");
+      const savedLightness = localStorage.getItem("lightness");
+      const savedSaturation = localStorage.getItem("saturation");
+      const savedSliderEnabled = localStorage.getItem("sliderEnabled") === "true";
+      const savedBrightnessMode = localStorage.getItem("brightnessMode");
+    
+      if (savedLightness && savedSaturation && savedBrightnessMode) {
+        document.documentElement.setAttribute("data-theme", savedBrightnessMode === "dark-mode" ? "dark" : "light");
+        savedSliderEnabled && savedSliderValue ? 
+        document.querySelector("html").style.backgroundColor = `hsl(${parseInt(savedSliderValue, 10)}, ${savedSaturation}%, ${savedLightness}%)` : 
+        document.querySelector("html").style.backgroundColor = `hsl(0, 0%, ${savedLightness}%)`;
+      } else {
+        document.querySelector("html").setAttribute("data-theme", "light");
+        document.querySelector("html").style.backgroundColor = '#fff';
+        localStorage.clear();
+      }
+  </script>
   <body>
     {{ content }}
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/swiper.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+        slidesPerView: 1.15,
+        spaceBetween: 15
+      })
+
+    </script>
   </body>
 </html>
