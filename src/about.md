@@ -72,7 +72,7 @@ But enough waxing poetic. What do I care about when it comes to web dev?
 
 &nbsp;
 
-*Finding the correct balance between form and function.* When I say correct, I mean: building the website and then whittling it down to its final form, through which it becomes the best tool for the job.
+*Finding the correct balance between form and function.* When I say correct, I mean - building the website and then whittling it down to its final form, through which it becomes a sharper pencil - the best, most precise tool for the job.
 
 &nbsp;
 

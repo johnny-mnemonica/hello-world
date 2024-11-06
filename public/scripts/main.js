@@ -2,7 +2,7 @@
 // Figure out system to deal with link colors.
 // Eventually - selectors for variables?
 // Minify JS
-// Fix light mode bug
+// Code cleanup
 
 const LIGHT_SATURATION = 70;
 const DARK_SATURATION = 15;
