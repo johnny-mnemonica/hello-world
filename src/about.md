@@ -96,7 +96,7 @@ In lieu of components, I simply use the _includes directory to render Liquid fil
 
 &nbsp;
 
-I designed all the icons on this website myself, using this brilliant piece of pixel art software called [Aseprite](https://www.aseprite.org/). I was inspired, of course, by the work of [Susan Kare](https://en.wikipedia.org/wiki/Susan_Kare) - the undisputed queen of UI. I have to say, designing legible icons on a small grid is not as easy at it seems.
+I designed all the icons on this website myself, using this brilliant piece of pixel art software called [Aseprite](https://www.aseprite.org/). I was inspired, of course, by the work of [Susan Kare](https://en.wikipedia.org/wiki/Susan_Kare) - the undisputed queen of UI. I have to say, designing legible icons on a small grid is a lot more difficult than it seems.
 
 &nbsp;
 
