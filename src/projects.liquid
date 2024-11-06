@@ -6,7 +6,7 @@ title: 	⊂(◉‿◉)つ - projects
 <h1># Portfolio</h1>
 
 <div class="portfolio-wrapper">
-{% for project in collections.projects %}
+{% for project in collections.projects reversed %}
   <div class="project-container">
     <h2>{{ project.data.title }}</h2>
     <span class="italic">{{ project.data.project_date }}</span>
