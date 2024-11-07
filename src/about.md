@@ -88,7 +88,7 @@ Although this quote was published in 1966, I find it more relevant than ever - e
 
 &nbsp;
 
-This website was built using [11ty](https://www.11ty.dev/), an SSG known for its simplicity and speedy performance. I was considering using Astro, but I chose 11ty because of its native support for Liquid, a templating language that I work with daily when I'm developing for Shopify.
+This website was built using [11ty](https://www.11ty.dev/), a SSG known for its simplicity and speedy performance. I was considering using Astro, but I chose 11ty because of its native support for Liquid, a templating language that I work with daily when I'm developing for Shopify.
 
 &nbsp;
 
