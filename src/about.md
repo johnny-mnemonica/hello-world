@@ -52,7 +52,7 @@ Sidenote: I tried to find my petpage for you, and I did - but I guess my Photobu
 
 &nbsp;
 
-Despite the extremely depressing poem on my petpage, I have fond memories of long summer days spent indoors teaching myself HTML/CSS via [Lissa Explains it All.](https://www.lissaexplains.com/) Looking back, it was a fun time to be a kid on the internet (if you avoided all the really, really bad stuff.)
+Despite the extremely emo poetry on my petpage, I do have fond memories of long summer days spent indoors teaching myself HTML/CSS via [Lissa Explains it All.](https://www.lissaexplains.com/) Looking back, it was a fun time to be a kid on the internet (if you avoided all the really, really bad stuff.)
 
 &nbsp;
 
