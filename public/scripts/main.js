@@ -29,7 +29,7 @@ function darkModeCheck() {
   } else {
     // If the color slider is disabled and light mode is selected
     saturation = LIGHT_SATURATION;
-    lightness = darkModeRadio.checked ? DARK_LIGHTNESS : 100;
+    lightness = darkModeRadio.checked ? 15 : 100;
   }
 }
 
@@ -215,9 +215,11 @@ toggleButton.addEventListener("click", () => {
     if (footer.classList.contains("slide-in")) {
         footer.classList.remove("slide-in");
         footer.classList.add("slide-out");
-    } else {
+        toggleButton.setAttribute("aria-expanded", "false");
+      } else {
         footer.classList.remove("slide-out");
         footer.classList.add("slide-in");
+        toggleButton.setAttribute("aria-expanded", "true");
     }
 });
 
