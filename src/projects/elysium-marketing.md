@@ -4,7 +4,7 @@ title: "Elysium AR (Landing)"
 project_date: "Nov 2023"
 tech_stack: 
   - "Next.js"
-  - "Typescript"
+  - "TypeScript"
   - "Three.js"
 images:
   - url: "/elysium-landing3.png"

@@ -5,7 +5,7 @@ project_date: "Sept 2022 - Ongoing"
 tech_stack: 
   - "Shopify"
   - "Liquid"
-  - "Javascript"
+  - "JavaScript"
 images:
   - url: "/basma.png"
     externalUrl: "https://basmabeauty.com"
