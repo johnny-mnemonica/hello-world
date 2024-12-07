@@ -8,9 +8,9 @@ tech_stack:
   - "Tailwind"
 date: 2008-01-01
 images:
-  - url: "/elysium-share.png"
+  - url: "/elysium-share.webp"
     externalUrl: "https://elysium.ar/scene/0fab39e6-1c33-4380-978f-aaf2c0a8f97e"
-  - url: "/elysium-share2.png"
+  - url: "/elysium-share2.webp"
     externalUrl: "https://elysium.ar/scene/1a36566c-4f2d-48e5-b77e-6d872f0973d8"
 ---
 

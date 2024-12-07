@@ -44,7 +44,7 @@ Sidenote: I tried to find my petpage for you, and I did - but I guess my Photobu
 
 &nbsp;
 
-![Screenshot of my petpage.](/petpage.png)
+![Screenshot of my petpage.](/petpage.webp)
 
 &nbsp;
 
@@ -100,7 +100,7 @@ I designed all the icons on this website myself, using this brilliant piece of p
 
 &nbsp;
 
-![Original MacOS UI](/susankare.png)
+![Original MacOS UI](/susankare.webp)
 
 &nbsp;
 

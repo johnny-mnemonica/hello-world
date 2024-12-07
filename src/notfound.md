@@ -12,4 +12,4 @@ oopsie
 
 &nbsp;
 
-![A cute hedgehog with a very long tongue sticking out of its mouth and large snot bubble coming out of its nose.](./404.jpg)
+![A cute hedgehog with a very long tongue sticking out of its mouth and large snot bubble coming out of its nose.](./404.webp)

@@ -7,9 +7,9 @@ tech_stack:
   - "PHP"
   - "Twig"
 images:
-  - url: "/htmlles3.png"
+  - url: "/htmlles3.webp"
     externalUrl: "https://htmlles.net"
-  - url: "/htmlles2.png"
+  - url: "/htmlles2.webp"
     externalUrl: "https://htmlles.net"  
 ---
 

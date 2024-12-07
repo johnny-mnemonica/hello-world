@@ -7,11 +7,11 @@ tech_stack:
   - "TypeScript"
   - "Three.js"
 images:
-  - url: "/elysium-landing3.png"
+  - url: "/elysium-landing3.webp"
     externalUrl: "https://elysium.ar"
-  - url: "/elysium-landing.png"
+  - url: "/elysium-landing.webp"
     externalUrl: "https://elysium.ar"
-  - url: "/elysium-landing2.png"
+  - url: "/elysium-landing2.webp"
     externalUrl: "https://elysium.ar"
 ---
 

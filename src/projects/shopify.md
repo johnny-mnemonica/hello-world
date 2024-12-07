@@ -7,11 +7,11 @@ tech_stack:
   - "Liquid"
   - "JavaScript"
 images:
-  - url: "/basma.png"
+  - url: "/basma.webp"
     externalUrl: "https://basmabeauty.com"
-  - url: "/pgc.png"
+  - url: "/pgc.webp"
     externalUrl: "https://propergoodsclub.com"  
-  - url: "/asb.png"
+  - url: "/asb.webp"
     externalUrl: "https://amandinesolbotanicals.com"
 ---
 
