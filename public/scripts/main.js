@@ -1,3 +1,9 @@
+// TODOS
+// Figure out system to deal with link colors.
+// Eventually - selectors for variables?
+// Minify JS
+// Code cleanup
+
 const LIGHT_SATURATION = 70;
 const DARK_SATURATION = 15;
 const LIGHT_LIGHTNESS = 90;
@@ -45,6 +51,7 @@ function updateBackgroundColor() {
 
 // Load saved UI preferences from localStorage
 window.addEventListener("load", () => {
+  const savedSliderValue = localStorage.getItem("sliderValue");
   const savedBrightnessMode = localStorage.getItem("brightnessMode");
   const isSliderEnabled = localStorage.getItem("sliderEnabled") === "true";
 
@@ -52,11 +59,20 @@ window.addEventListener("load", () => {
     sliderValue = parseInt(savedSliderValue, 10);
     colorSlider.value = sliderValue;
   }
-
+// TODO: move this to base.liquid
   if (savedBrightnessMode) {
     document.getElementById(savedBrightnessMode).checked = true;
     lightness = savedBrightnessMode === "dark-mode" ? DARK_LIGHTNESS : LIGHT_LIGHTNESS;
+    // document.documentElement.setAttribute(
+    //   "data-theme",
+    //   savedBrightnessMode === "dark-mode" ? "dark" : "light"
+    // );
   } 
+  // else {
+  //   document.documentElement.setAttribute("data-theme", "light");
+  //   document.querySelector("html").style.backgroundColor = '#fff';
+  //   localStorage.clear();
+  // }
 
   sliderCheckbox.checked = isSliderEnabled;
   colorSlider.disabled = !isSliderEnabled;
@@ -64,11 +80,19 @@ window.addEventListener("load", () => {
 
 // Listens for change in enable/disable slider checkbox
 sliderCheckbox.addEventListener("change", function () {
+  // if (this.checked) {
+  //   colorSlider.disabled = false;
+  // } else {
+  //   sliderValue = colorSlider.value; // Store the value before disabling
+  //   colorSlider.disabled = true;
+  // }
+
   colorSlider.disabled = !this.checked;
 
   if (!colorSlider.disabled) {
     sliderValue = parseInt(colorSlider.value, 10);
   }
+
 
   darkModeCheck();
   updateBackgroundColor();
