@@ -6,6 +6,7 @@
     url("../fonts/PPNeueBit-Regular.ttf") format("truetype"),
     url("../fonts/PPNeueBit-Regular.woff") format("woff"),
     url("../fonts/PPNeueBit-Regular.woff2") format("woff2");
+    font-display: fallback;
 }
 
 @font-face {
@@ -15,6 +16,7 @@
     url("../fonts/PPNeueBit-Bold.woff") format("woff"),
     url("../fonts/PPNeueBit-Bold.woff2") format("woff2");
   font-weight: bold;
+  font-display: fallback;
 }
 
 @font-face {

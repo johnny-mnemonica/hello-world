@@ -10,9 +10,11 @@ title: 	⊂(◉‿◉)つ
     <title>{{ title }}</title>
     <link rel="preload" href="/fonts/PPNeueBit-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/PPNeueBit-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    {% if title == '⊂(◉‿◉)つ - projects' %}
+    <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
+    {% endif %}
   </head>
   <script>
       const savedSliderValue = localStorage.getItem("sliderValue");
