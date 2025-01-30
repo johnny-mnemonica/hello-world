@@ -2,8 +2,6 @@
 layout: /layouts/home.liquid
 title: 	⊂(◉‿◉)つ - monica's home
 ---
-<!-- 
-{% renderFile "./includes/components/ascii.liquid" %} -->
 
 It seems like you've stumbled upon my little piece of the web. 
 
