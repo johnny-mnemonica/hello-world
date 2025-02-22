@@ -2,8 +2,7 @@
 
 @font-face {
   font-family: "PP Neuebit";
-  src: url("../fonts/PPNeueBit-Regular.otf") format("opentype"),
-    url("../fonts/PPNeueBit-Regular.ttf") format("truetype"),
+  src: 
     url("../fonts/PPNeueBit-Regular.woff") format("woff"),
     url("../fonts/PPNeueBit-Regular.woff2") format("woff2");
     font-display: fallback;
@@ -11,8 +10,7 @@
 
 @font-face {
   font-family: "PP Neuebit";
-  src: url("../fonts/PPNeueBit-Bold.otf") format("opentype"),
-    url("../fonts/PPNeueBit-Bold.ttf") format("truetype"),
+  src:
     url("../fonts/PPNeueBit-Bold.woff") format("woff"),
     url("../fonts/PPNeueBit-Bold.woff2") format("woff2");
   font-weight: bold;
@@ -140,6 +138,7 @@ pre {
 /* Link Styles */
 
 a {
+  /* text-decoration: none; */
   text-decoration-style: double;
   /* text-underline-offset: 4px; */
   /* text-underline-position: under; */
@@ -147,6 +146,7 @@ a {
   color: var(--url-color);
   text-decoration-color: var(--url-underline-color);
   text-decoration-thickness: 1.5px;
+  text-rendering: optimizeLegibility;
 }
 
 a:hover {
