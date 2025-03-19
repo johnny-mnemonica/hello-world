@@ -14,3 +14,27 @@ if (savedLightness && savedSaturation && savedBrightnessMode) {
   document.querySelector("html").style.backgroundColor = '#fff';
   localStorage.clear();
 }
+
+// Font Face Observer
+
+const neuebit = new FontFaceObserver('PP Neuebit', {
+  weight: 300
+});
+
+const neuebitBold = new FontFaceObserver('PP Neuebit', {
+  weight: "bold"
+});
+
+neuebit.load().then(function () {
+  document.documentElement.classList.add('body-font-loaded');
+  sessionStorage.setItem('fonts-loaded', true);
+  console.log("fonts loaded")
+}).catch(function () {
+  document.documentElement.classList.add('fallback');;
+});
+
+neuebitBold.load().then(function () {
+  document.documentElement.classList.add('heading-font-loaded');
+}).catch(function () {
+  console.log('PP Neuebit failed to load.');
+});

@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@11ty/eleventy": "3.0.0-alpha.4",
+    "clean-css": "^5.3.3",
+    "fontfaceobserver": "^2.3.0",
     "swiper": "^11.1.14",
     "terser": "^5.39.0"
   },

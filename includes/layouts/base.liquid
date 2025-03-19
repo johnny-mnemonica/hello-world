@@ -10,6 +10,14 @@ title: 	⊂(◉‿◉)つ
   {% render "./scripts/split.js" %}
 {% endcapture %}
 
+{% capture reset %}
+  {% render "./css/reset.css" %}
+{% endcapture %}
+
+{% capture css %}
+  {% render "./css/index.css" %}
+{% endcapture %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,14 +27,22 @@ title: 	⊂(◉‿◉)つ
     <link rel="preload" href="/fonts/PPNeueBit-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/PPNeueBit-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    {% comment %} <link rel="stylesheet" type="text/css" href="/css/index.css"> {% endcomment %}
+    <style>
+      {{- reset | cssmin -}}
+    </style>
+    <style>
+      {{- css | cssmin -}}
+    </style>
     {% if title == '⊂(◉‿◉)つ - projects' %}
     <link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
     {% endif %}
+    <script src="/scripts/fontfaceobserver.js"></script>
+    <script src="/scripts/font-loading.js"></script>
+    <script>
+      {{- split | jsmin -}}
+    </script>
   </head>
-  <script>
-    {{- split | jsmin -}}
-  </script>
   <body>
     {{ content }}
   <script>

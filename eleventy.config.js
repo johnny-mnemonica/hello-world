@@ -1,5 +1,6 @@
 import { EleventyRenderPlugin } from "@11ty/eleventy";
 import { minify } from "terser";
+import CleanCSS from "clean-css";
 
 export default async function(eleventyConfig) {
 
@@ -12,6 +13,11 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "./node_modules/swiper/swiper.min.css": "/css/swiper.min.css"
+  });
+
+  // Font Face Observer
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/fontfaceobserver/fontfaceobserver.js": "/scripts/fontfaceobserver.js"
   });
 
   // Public assets
@@ -29,11 +35,16 @@ export default async function(eleventyConfig) {
 		}
 	});
 
-    // Return your Object options:
-    return {
-      dir: {
-        input: "src",
-        includes: "../includes",
-      }
+  // Minify Css
+  eleventyConfig.addFilter("cssmin", function (code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
+
+  // Return your Object options:
+  return {
+    dir: {
+      input: "src",
+      includes: "../includes",
     }
   }
+}
