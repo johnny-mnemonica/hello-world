@@ -23,7 +23,7 @@ title: 	⊂(◉‿◉)つ - projects
           {% for image in project.data.images %}
             <div class="swiper-slide">
               <a href="{{ image.externalUrl }}" width="550" target="_blank">
-                <img src="{{ image.url }}"/>
+                <img src="{{ image.url }}" alt="{{ image.alt }}"/>
               </a>
             </div>
           {% endfor %}

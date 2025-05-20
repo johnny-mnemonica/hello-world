@@ -244,6 +244,7 @@ a:focus {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
     padding: 40px;
+    padding-top: 30px;
   }
 
   .grid-2 {
@@ -423,15 +424,12 @@ html {
 
 .footer input[type=checkbox] + label {
   filter: grayscale();
-  /* transition: all .10s ease-in-out; */
   cursor: pointer;
   will-change: filter;
-  /* touch-action: none; */
 }
 
 .footer input[type=checkbox]:checked + label {
   filter: none;
-  /* transition: all .10s ease-in-out; */
 }
 
 .footer fieldset {

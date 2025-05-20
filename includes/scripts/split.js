@@ -27,14 +27,12 @@ const neuebitBold = new FontFaceObserver('PP Neuebit', {
 
 neuebit.load().then(function () {
   document.documentElement.classList.add('body-font-loaded');
-  sessionStorage.setItem('fonts-loaded', true);
-  console.log("fonts loaded")
 }).catch(function () {
-  document.documentElement.classList.add('fallback');;
+  document.documentElement.classList.add('fallback');
 });
 
 neuebitBold.load().then(function () {
   document.documentElement.classList.add('heading-font-loaded');
 }).catch(function () {
-  console.log('PP Neuebit failed to load.');
+  document.documentElement.classList.add('fallback');
 });

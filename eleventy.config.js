@@ -1,10 +1,34 @@
 import { EleventyRenderPlugin } from "@11ty/eleventy";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { minify } from "terser";
 import CleanCSS from "clean-css";
 
 export default async function(eleventyConfig) {
 
+  // Render Plugin
   eleventyConfig.addPlugin(EleventyRenderPlugin);
+
+  // Image Plugin
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+
+    formats: ["webp", "jpeg"],
+    widths: ["auto", 550, 800],
+
+		// optional, attributes assigned on <img> nodes override these values
+		htmlOptions: {
+			imgAttributes: {
+				loading: "lazy",
+        sizes: '100vw',
+				decoding: "async",
+			},
+			pictureAttributes: {}
+		},
+  });
+
+  // Public assets
+  eleventyConfig.addPassthroughCopy({
+    "./public/": "/"
+  });
 
   // Swiper.js
   eleventyConfig.addPassthroughCopy({
@@ -20,11 +44,6 @@ export default async function(eleventyConfig) {
     "./node_modules/fontfaceobserver/fontfaceobserver.js": "/scripts/fontfaceobserver.js"
   });
 
-  // Public assets
-  eleventyConfig.addPassthroughCopy({
-		"./public/": "/"
-	});
-
   // Minify JS
   eleventyConfig.addFilter("jsmin", async function (code) {
 		try {
@@ -35,7 +54,7 @@ export default async function(eleventyConfig) {
 		}
 	});
 
-  // Minify Css
+  // Minify CSS
   eleventyConfig.addFilter("cssmin", function (code) {
 		return new CleanCSS({}).minify(code).styles;
 	});
