@@ -12,7 +12,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 
     formats: ["webp", "jpeg"],
-    widths: ["auto", 550, 800],
+    widths: [550, 800, 1000, 1200, 1600, 2000],
 
 		// optional, attributes assigned on <img> nodes override these values
 		htmlOptions: {

@@ -8,11 +8,13 @@ tech_stack:
   - "JavaScript"
 images:
   - url: "img/basma.webp"
-    alt: "test"
+    alt: "BASMA Beauty"
     externalUrl: "https://basmabeauty.com"
   - url: "img/pgc.webp"
+    alt: "Proper Goods Club"
     externalUrl: "https://propergoodsclub.com"  
   - url: "img/asb.webp"
+    alt: "Amandine Sol Botanicals"
     externalUrl: "https://amandinesolbotanicals.com"
 ---
 

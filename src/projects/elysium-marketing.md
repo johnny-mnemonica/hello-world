@@ -8,10 +8,13 @@ tech_stack:
   - "Three.js"
 images:
   - url: "img/elysium-landing3.webp"
+    alt: "Elysium Landing Page"
     externalUrl: "https://elysium.ar"
   - url: "img/elysium-landing.webp"
+    alt: "Elysium Landing Page"
     externalUrl: "https://elysium.ar"
   - url: "img/elysium-landing2.webp"
+    alt: "Elysium Landing Page"
     externalUrl: "https://elysium.ar"
 ---
 

@@ -30,6 +30,8 @@
   --line-height-base: 1;
 }
 
+/* TODO: add breakpoint variables */
+
 /* Color variables */
 :root {
   --icon-color: #0000ee;
@@ -235,7 +237,7 @@ a:focus {
   }
 
   .grid-1 h1 {
-    line-height: 0.9;
+    line-height: 0.68;
     position: fixed;
   }
 
@@ -244,7 +246,7 @@ a:focus {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
     padding: 40px;
-    padding-top: 30px;
+    /* padding-top: 30px; */
   }
 
   .grid-2 {

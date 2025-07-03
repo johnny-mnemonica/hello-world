@@ -20,10 +20,13 @@ title: 	⊂(◉‿◉)つ - projects
     <div class="swiper">
       <div class="swiper-wrapper">
         {% if project.data.images %}
+          {% assign outer_loop = forloop %}
           {% for image in project.data.images %}
             <div class="swiper-slide">
               <a href="{{ image.externalUrl }}" width="550" target="_blank">
-                <img src="{{ image.url }}" alt="{{ image.alt }}"/>
+                <img src="{{ image.url }}" alt="{{ image.alt }}" {% if outer_loop.first %}loading="eager"{% endif %}  
+                sizes="(min-width: 1050px) 38vw, 100vw"
+                />
               </a>
             </div>
           {% endfor %}

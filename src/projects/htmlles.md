@@ -8,8 +8,10 @@ tech_stack:
   - "Twig"
 images:
   - url: "img/htmlles3.webp"
+    alt: "HTMlles Festival 2024"
     externalUrl: "https://htmlles.net"
   - url: "img/htmlles2.webp"
+    alt: "HTMlles Festival 2024"
     externalUrl: "https://htmlles.net"  
 ---
 
