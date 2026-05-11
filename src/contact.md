@@ -6,10 +6,6 @@ title: 	⊂(◉‿◉)つ - say hi
 # # Say hi!
 &nbsp;
 
-<i>I'm currently looking for new clients, connections, and opportunities.</i>
-
-&nbsp;
-
 Got a joke for me? Some esoteric wisdom to share?
 Perhaps your grandmother's favourite recipe?
 

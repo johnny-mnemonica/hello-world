@@ -12,9 +12,8 @@ Let me introduce myself. If I could offer you a cup of tea, I would.
  &nbsp;
 
  My name is Monica, and I'm a Web Developer and designer, among other things.
-&nbsp; 
 
- I currently work part-time as a Shopify Developer at [Off-Paper Creative Agency](http://www.offpapercreative.com). 
+I currently work full time as a Front-End Developer.
 
 &nbsp; 
 

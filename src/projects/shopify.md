@@ -1,7 +1,7 @@
 ---
 tags: "projects"
 title: "Shopify Theme Development"
-project_date: "Sept 2022 - Ongoing"
+project_date: "Sept 2022 - July 2025"
 tech_stack: 
   - "Shopify"
   - "Liquid"

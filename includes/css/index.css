@@ -146,9 +146,6 @@ pre {
   grid-column: 2 / 4;
   margin-top: 160px;
   padding-bottom: 60px;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* width: fit-content; */
 }
 
 .grid-3 {
@@ -176,7 +173,6 @@ pre {
   display: flex;
   justify-content: center;
   flex-shrink: 0;
-  /* position: fixed; */
 }
 
 .icon-box li {
@@ -243,11 +239,12 @@ a:focus {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
-    padding: 40px;
+    padding: 30px;
   }
 
   .grid-2 {
     margin-top: 25vh;
+    margin-left: 4.071rem;
   }
 
   /* Icon Animation Styles */
@@ -270,12 +267,12 @@ a:focus {
 
   .nav-icon:hover:not(.cursor) {
     transform: translateY(3px);
-    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   .nav-icon:not(.cursor) {
     transform: translateY(0px);
-    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 }
 
